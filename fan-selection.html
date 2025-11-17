@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Selection - FanTastic Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <h2 class="logo-text">FanTastic</h2>
+                    </a>
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="index.html#hero-section" class="nav-link">Home</a>
+                    <a href="index.html#service-section" class="nav-link">ServiceReport</a>
+                    <a href="#" class="nav-link" onclick="openWhatsApp(); return false;">Contact Us</a>
+                </nav>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu">
+                <nav class="nav-mobile">
+                    <a href="index.html#hero-section" class="nav-link-mobile" onclick="toggleMobileMenu()">Home</a>
+                    <a href="index.html#service-section" class="nav-link-mobile" onclick="toggleMobileMenu()">ServiceReport</a>
+                    <a href="#" class="nav-link-mobile" onclick="openWhatsApp(); toggleMobileMenu(); return false;">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fan Selection Section -->
+    <div class="fan-selection-container">
+        <div class="fan-selection-card">
+            <h1 class="fan-selection-title">Select Fan Unit</h1>
+            <p id="companyDisplay" class="company-display-small"></p>
+            
+            <p class="fan-selection-subtitle">Choose a fan to view its service reports</p>
+
+            <div id="fanGrid" class="fan-grid">
+                <!-- Fan cards will be dynamically generated here -->
+            </div>
+
+            <button type="button" onclick="goBack()" class="btn-back">
+                BACK TO PASSWORD
+            </button>
+        </div>
+    </div>
+
+    <script src="fan-selection.js"></script>
+</body>
+</html>
