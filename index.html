@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FanTastic Service Maintenance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <img src="Fantastic_White.png" class="logo">
+
+    <h1 class="title">Service Maintenance Search</h1>
+
+    <input 
+        type="text" 
+        id="searchInput" 
+        class="search-bar" 
+        placeholder="Search Customer Company Name..."
+        onkeyup="filterList()"
+    >
+
+    <button class="go-btn" onclick="goToPassword()">GO</button>
+
+    <ul id="customerList" class="list">
+        <li>AFN SPORTS EQUIPMENT SDN BHD</li>
+        <li>AKER SOLUTIONS</li>
+        <li>ANSHIN</li>
+        <li>ARATA AUTO CENTRE SDN BHD</li>
+        <li>BBCC DEVELOPMENT</li>
+        <li>CITY UNIVERSITY</li>
+        <li>CLICKASIA SDN BHD</li>
+        <li>DATARAN SEGAR HUAT HUAT HUAT FOOD COURT</li>
+        <li>DHUB</li>
+        <li>ECRL</li>
+        <li>EXHIBITION SAMPLE</li>
+        <li>FedEx-Bukit Jelutong</li>
+        <li>FedEx-Hitech</li>
+        <li>FedEx-KLIA</li>
+        <li>FINEGUARD INDUSTRIES</li>
+        <li>FOODAGON CONNEXION SDN BHD</li>
+        <li>FURI GLOBAL SDN BHD</li>
+        <li>GBB BAKERY</li>
+        <li>GOOD TIMING FOOD VILLAGE</li>
+        <li>HONDA LOGISTICS</li>
+        <li>ISKANDAR EDUCATION ENTERPRISE SDN BHD</li>
+        <li>ISKANDAR INNOVATIONS SDN BHD</li>
+        <li>JOYCAMP PJ SDN BHD</li>
+        <li>KOH TIKI OKR SDN BHD</li>
+        <li>KUEHNE + NAGEL</li>
+        <li>LH ELECTRIC & SERVICES</li>
+        <li>LOTUS'S STORE (MALAYSIA) SDN BHD</li>
+        <li>LUXE ACRE SDN BHD</li>
+        <li>MACRO PERSPECTIVE SDN BHD</li>
+        <li>MILLENNIUM WELT SDN BHD</li>
+        <li>NESTLE MANUFACTURING (M) SDN BHD (CHEMBONG)</li>
+        <li>NESTLE MANUFACTURING (M) SDN BHD (SA)</li>
+        <li>PERCETAKAN TENAGA</li>
+        <li>PERODUA MANUFACTURING SDN BHD</li>
+        <li>REDVEST</li>
+        <li>SAGA MAKMUR SDN BHD</li>
+        <li>SEA ASIA SDN BHD</li>
+        <li>SIN TAI HING</li>
+        <li>SJK(C) HUA LIAN 3</li>
+        <li>SJK(C) KEHSENG</li>
+        <li>SK SAUJANA IMPIAN 2</li>
+        <li>SMK TELOK DATOK</li>
+        <li>SUNSET</li>
+        <li>T7 AERO REPORT</li>
+        <li>TAYLOR (TEG)</li>
+        <li>UCSI INTERNATIONAL SCHOOL SB</li>
+        <li>UPPER HERITAGE SDN BHD</li>
+    </ul>
+
+</div>
+
+<script>
+function filterList() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let list = document.getElementById("customerList").getElementsByTagName("li");
+
+    for (let i = 0; i < list.length; i++) {
+        let name = list[i].innerText.toUpperCase();
+        list[i].style.display = name.includes(input) ? "" : "none";
+    }
+}
+
+function goToPassword() {
+    let selected = document.getElementById("searchInput").value;
+    if (selected.trim() === "") {
+        alert("Please type a company name before clicking GO.");
+        return;
+    }
+    // Save the name so password page can read it
+    localStorage.setItem("companyName", selected.trim());
+    window.location.href = "password.html";
+}
+</script>
+
+</body>
+</html>
